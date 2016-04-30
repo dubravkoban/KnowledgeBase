@@ -4,19 +4,28 @@
     Layout = null;
 }
 
-<div>
+<div class="container">
     <h3>@Model.Title</h3>
-    <a href="@Model.Url">@Model.Url</a>
+    <a href="@Model.Url" target="_blank">@Model.Url</a>
     <p>@Model.Description</p>
-</div>
+@*</div>
 
-<div>
-    <p>
+<div>*@
+    <p class="pull-left">
         Tags:
         @foreach (var keyword in Model.Keywords)
         {
-            <span class="label label-primary">@keyword</span>
+            <span class="label label-primary">@keyword.Keyword</span>
         }
     </p>
+
+
+    <div>
+        <button class="btn pull-right">
+            @Html.ActionLink("Edit", "EditLink", new { id = Model.Id})
+        </button>
+    </div>
 </div>
+
+
 <hr />

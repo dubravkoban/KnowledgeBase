@@ -203,6 +203,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KeywordViewModel.cs" />
+    <Compile Include="Models\LinkEditViewModel.cs" />
     <Compile Include="Models\LinkViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,6 +287,7 @@
     <Content Include="Views\Link\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LinkViewModel.cshtml" />
     <Content Include="Views\Link\AddNew.cshtml" />
+    <Content Include="Views\Link\EditLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,7 +321,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50970</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50970/</IISUrl>
+          <IISUrl>http://localhost:50971/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

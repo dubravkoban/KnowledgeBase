@@ -30,13 +30,33 @@ namespace KnowledgeBase.Controllers
         [HttpGet]
         public ActionResult AddNew()
         {
-            return View();
+            var vm = new LinkEditViewModel();
+            vm.Keywords = repo.GetTagsList();
+
+            return View(vm);
         }
 
         [HttpPost]
-        public ActionResult AddNew(LinkViewModel vm)
+        public ActionResult AddNew(LinkEditViewModel vm)
         {
             repo.AddLink(vm);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditLink(int id)
+        {
+            var vm = new LinkEditViewModel();
+            vm = repo.GetLinkById(id);
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult EditLink(LinkEditViewModel vm)
+        {
+            repo.SaveLink(vm);
 
             return RedirectToAction("Index");
         }

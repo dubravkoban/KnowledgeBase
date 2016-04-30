@@ -10,7 +10,5 @@ namespace KnowledgeBase.Models
         public int Id { get; set; }
 
         public string Keyword { get; set; }
-
-        public int LinkId { get; set; }
     }
 }
