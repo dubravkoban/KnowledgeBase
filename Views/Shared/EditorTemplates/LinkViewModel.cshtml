@@ -1,0 +1,22 @@
+﻿@model KnowledgeBase.Models.LinkViewModel
+
+@{
+    Layout = null;
+}
+
+<div>
+    <h3>@Model.Title</h3>
+    <a href="@Model.Url">@Model.Url</a>
+    <p>@Model.Description</p>
+</div>
+
+<div>
+    <p>
+        Tags:
+        @foreach (var keyword in Model.Keywords)
+        {
+            <span class="label label-primary">@keyword</span>
+        }
+    </p>
+</div>
+<hr />

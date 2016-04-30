@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KnowledgeBase.Database;
+using KnowledgeBase.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +12,21 @@ namespace KnowledgeBase.Controllers
     {
         public ActionResult Index()
         {
+            var newLink = new Links();
+            newLink.Title = "my new link";
+            newLink.Description = "this is my new link";
+            newLink.Url = "http://www.google.com";
+
+            using (var ctx = new DbModel())
+            {
+                ctx.Links.Add(newLink);
+
+                ctx.SaveChanges();
+
+
+                var links = ctx.Links.Select(l => l.Title).ToList();
+            }
+
             return View();
         }
 

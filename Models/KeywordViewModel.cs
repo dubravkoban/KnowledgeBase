@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace KnowledgeBase.Models
+{
+    public class KeywordViewModel
+    {
+        public int Id { get; set; }
+
+        public string Keyword { get; set; }
+
+        public int LinkId { get; set; }
+    }
+}
